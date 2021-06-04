@@ -127,7 +127,7 @@ class NumberElementCollector {
         [0, innerWidth], // x
         [0, innerHeight], // y
         [15, 50], // size
-        [-12, 12] // speed
+        [-0.05, 0.05] // speed
       )
     )
   }
