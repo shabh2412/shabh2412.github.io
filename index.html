@@ -91,15 +91,79 @@
                                  <div class="about-desc">
                                     <h1><strong>Rishabh <span style="color: #FACD69">Panesar</span></strong></h1>
                                     <hr>
-                                     <p>Hi, Welcome to my portfolio.</p>
-                                    <p>I'm a Machine Learning Enthusiast from INDIA.</p>
+                                     <!-- <p>Hi, Welcome to my portfolio.</p> -->
+                                    <!-- <p>I'm a Machine Learning Enthusiast from INDIA.</p> -->
                                  </div>
                               </div>
                            </div>
                            <div class="row">
                               <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
                                  <div class="hire" style="border-radius: 20px;">
-                                    <h2 class="text-justify" style="font-family: 'Roboto'">I am a student with excellent communication skills. I have expertise and experience in a variety of areas, such as Machine Learning, Content Creation & Video Editing. My objective is to have a taste of working in every domain, and contribute to the growth of society in every possible way.</h2>
+                                    <!-- <h2 class="text-justify" style="font-family: 'Roboto'">I'm open to work! Hire me Now!</h2> -->
+                                    <h2 class="typewrite" data-period="2000" data-type='[ "Hi, Im Rishabh.", "I am Creative.", "I Love Machine Learning, Data Science, A.I. & NLP.", "I also love to Develop Android Applications, Make Youtube Videos, and write blogs too!"]'>
+                                       <script>
+                                          var TxtType = function(el, toRotate, period) {
+                                             this.toRotate = toRotate;
+                                             this.el = el;
+                                             this.loopNum = 0;
+                                             this.period = parseInt(period, 10) || 2000;
+                                             this.txt = '';
+                                             this.tick();
+                                             this.isDeleting = false;
+                                          };
+
+                                          TxtType.prototype.tick = function() {
+                                             var i = this.loopNum % this.toRotate.length;
+                                             var fullTxt = this.toRotate[i];
+
+                                             if (this.isDeleting) {
+                                             this.txt = fullTxt.substring(0, this.txt.length - 1);
+                                             } else {
+                                             this.txt = fullTxt.substring(0, this.txt.length + 1);
+                                             }
+
+                                             this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+                                             var that = this;
+                                             var delta = 200 - Math.random() * 100;
+
+                                             if (this.isDeleting) { delta /= 2; }
+
+                                             if (!this.isDeleting && this.txt === fullTxt) {
+                                             delta = this.period;
+                                             this.isDeleting = true;
+                                             } else if (this.isDeleting && this.txt === '') {
+                                             this.isDeleting = false;
+                                             this.loopNum++;
+                                             delta = 500;
+                                             }
+
+                                             setTimeout(function() {
+                                             that.tick();
+                                             }, delta);
+                                          };
+
+                                          window.onload = function() {
+                                             var elements = document.getElementsByClassName('typewrite');
+                                             for (var i=0; i<elements.length; i++) {
+                                                   var toRotate = elements[i].getAttribute('data-type');
+                                                   var period = elements[i].getAttribute('data-period');
+                                                   if (toRotate) {
+                                                   new TxtType(elements[i], JSON.parse(toRotate), period);
+                                                   }
+                                             }
+                                             // INJECT CSS
+                                             var css = document.createElement("style");
+                                             css.type = "text/css";
+                                             css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                                             document.body.appendChild(css);
+                                          };
+                                       </script>
+                                       <!-- <a href="" > -->
+                                         <span class="wrap"></span>
+                                       </a>
+                                     </h2>
+                                    <!-- <h2 class="text-justify" style="font-family: 'Roboto'">I am a student with excellent communication skills. I have expertise and experience in a variety of areas, such as Machine Learning, Content Creation & Video Editing. My objective is to have a taste of working in every domain, and contribute to the growth of society in every possible way.</h2> -->
                                    <a href="https://github.com/shabh2412/shabh2412.github.io/raw/master/Rishabh_Panesar_Resume.pdf" class="btn-hire" style="text-align: center;"><span class="fa fa-hand-pointer-o"></span> Download Resume</a>
                                  </div>
                               </div>
@@ -391,7 +455,7 @@
                                        <a target="_blank" href="https://github.com/shabh2412" style="color: black;" class="fa fa-github"></a>
                                     </p>
                                  </div>
-                                 <p style="text-align: center; margin-bottom: -20px;"><strong>&copy; No Copyrights, feel free to reuse this template.</strong></p>
+                                 <p style="text-align: center; margin-bottom: -20px;"><strong>&copy;Handcrafted by <a href="http://linkedin.com/in/rishabh-panesar/" target="_blank">Rishabh Panesar</a> <strong></p>
                               </div>
                            </div>
                         </div>
